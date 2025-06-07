@@ -1,3 +1,4 @@
+/* Reset and base */
 * {
   margin: 0;
   padding: 0;
@@ -5,40 +6,89 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e6f9f2; /* Light mint */
+  color: #2c3e50;
+  scroll-behavior: smooth;
 }
 
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #333;
-  transition: background-color 0.3s ease;
+  background-color: #d9f2ea; /* Mint */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
+  padding: 0.8rem 0;
+}
+
+.scrolled {
+  background-color: #00695c; /* Dark green when scrolled */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .menu {
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 1rem;
+  gap: 2rem;
 }
 
 .menu li a {
-  color: white;
+  color: #2c3e50;
   text-decoration: none;
+  font-weight: 500;
   padding: 0.5rem 1rem;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .menu li a:hover {
-  background-color: white;
-  color: #333;
-  border-radius: 5px;
+  background-color: #a8e6cf; /* Soft green hover */
+  color: #004d40;
 }
 
-/* Scrolled navbar */
-.scrolled {
-  background-color: #222;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.scrolled .menu li a {
+  color: #ffffff;
+}
+
+.scrolled .menu li a:hover {
+  background-color: #004d40;
+  color: #ffffff;
+}
+
+/* Page section styling */
+.section {
+  padding: 120px 20px 80px;
+  text-align: center;
+  animation: fadeInUp 0.6s ease;
+}
+
+.section h1, .section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
+}
+
+body {
+  min-height: 200vh; /* makes page twice as tall as the viewport */
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

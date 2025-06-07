@@ -1,5 +1,4 @@
-// Change navbar style on scroll
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
@@ -7,3 +6,4 @@ window.addEventListener('scroll', function () {
     navbar.classList.remove('scrolled');
   }
 });
+console.log("Scroll position:", window.scrollY);
